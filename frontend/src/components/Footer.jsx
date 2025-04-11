@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="max-padd-container flex items-start justify-between flex-wrap gap-12 mt-12">
         {/* logo - Left side */}
         <div className="flex flex-col max-w-sm gap-y-5">
-          <div className="bold-28">Shopanza</div>
+          <div className="bold-28">ATOM SHOP</div>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
             earum reprehenderit possimus!
@@ -102,9 +102,8 @@ const Footer = () => {
         </div>
       </div>
       {/* copyrights */}
-      <p className="max-padd-container bg-primary medium-14 py-2 px-8 rounded flexBetween mt-6">
-        <span>2025 Shopanza</span>
-        <span>All rights reserved</span>
+      <p className="max-padd-container bg-primary medium-14 rounded mt-6 text-center pt-2 pb-2">
+        <span>© {new Date().getFullYear()} P  roduct of Team ATOM.</span>
       </p>
     </footer>
   );

@@ -23,7 +23,7 @@ const Header = () => {
       <div className="flexBetween py-3">
         {/* LOGO  */}
         <Link to={"/"} className="flex flex-1 bold-24 xl:bold-28">
-          Shopanza
+          ATOM SHOP
         </Link>
         {/* NAVBAR */}
         <div className="flex-1">

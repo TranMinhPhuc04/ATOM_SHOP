@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import login from "../assets/login.png";
+import login from "../assets/logoLogin.png";
 import { ShopContext } from "../context/ShopContext";
 import axios from "axios";
 import { toast } from "react-toastify";
@@ -54,99 +54,94 @@ const Login = () => {
   }, [token]);
 
   return (
-    <div className="absolute top-0 left-0 h-full w-full z-50 bg-white">
-      {/* CONTAINER */}
-      <div className="flex h-full w-full">
-        {/* IMAGE SIDE */}
-        <div className="w-1/2 hidden sm:block">
-          <img
-            src={login}
-            alt="loginImg"
-            className="object-cover h-full w-full"
-          />
-        </div>
-        {/* FORM SIDE */}
-        <div className="flexCenter w-full sm:w-1/2 text-[90%]">
-          <form
-            onSubmit={onSubmitHandler}
-            className="flex flex-col items-center w-[90%] sm:max-w-md m-auto gap-y-5"
-          >
-            <div className="w-full mb-4">
-              <h3 className="bold-36">{currState}</h3>
-            </div>
+    <div className="min-h-screen w-full bg-gradient-to-br from-white to-slate-100 flex items-center justify-center p-4">
+      <div className="flex flex-col-reverse md:flex-row bg-white shadow-2xl rounded-2xl overflow-hidden max-w-4xl w-full">
+        {/* Form Side */}
+        <div className="w-full md:w-1/2 p-8 sm:p-10">
+          <h2 className="text-3xl font-bold text-slate-800 mb-6 text-center">
+            {currState === "Sign Up" ? "Create Account" : "User Login"}
+          </h2>
+          <form onSubmit={onSubmitHandler} className="space-y-5">
             {currState === "Sign Up" && (
-              <div className="w-full">
-                <label htmlFor="name" className="medium-15">
+              <div>
+                <label className="block text-sm font-medium text-slate-600">
                   Name
                 </label>
                 <input
-                  onChange={(e) => setName(e.target.value)}
-                  value={name}
                   type="text"
-                  placeholder="Name"
-                  className="w-full px-3 py-1.5 ring-1 ring-slate-900/5 rounded bg-primary mt-1"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="mt-1 w-full px-4 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-slate-500 focus:outline-none"
+                  placeholder="Your name"
+                  required
                 />
               </div>
             )}
-            <div className="w-full">
-              <label htmlFor="email" className="medium-15">
+            <div>
+              <label className="block text-sm font-medium text-slate-600">
                 Email
               </label>
               <input
-                onChange={(e) => setEmail(e.target.value)}
-                value={email}
                 type="email"
-                placeholder="Email"
-                className="w-full px-3 py-1.5 ring-1 ring-slate-900/5 rounded bg-primary mt-1"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="mt-1 w-full px-4 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-slate-500 focus:outline-none"
+                placeholder="you@example.com"
+                required
               />
             </div>
-            <div className="w-full">
-              <label htmlFor="password" className="medium-15">
+            <div>
+              <label className="block text-sm font-medium text-slate-600">
                 Password
               </label>
               <input
-                onChange={(e) => setPassword(e.target.value)}
-                value={password}
                 type="password"
-                placeholder="Password"
-                className="w-full px-3 py-1.5 ring-1 ring-slate-900/5 rounded bg-primary mt-1"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="mt-1 w-full px-4 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-slate-500 focus:outline-none"
+                placeholder="••••••••"
+                required
               />
             </div>
             <button
               type="submit"
-              className="btn-dark w-full mt-5 !py-[8px] !rounded"
+              className="w-full bg-slate-800 text-white py-2 rounded-md hover:bg-slate-700 transition-all duration-200"
             >
               {currState === "Sign Up" ? "Sign Up" : "Login"}
             </button>
-            <div className="w-full flex flex-col gap-y-3">
+            <div className="text-sm text-center text-slate-600 pt-2">
               {currState === "Login" ? (
                 <>
-                  <div className="underline medium-15">
-                    Forgot your password?
-                  </div>
-                  <div className="underline medium-15">
-                    Don't have an account?
-                    <span
-                      onClick={() => setCurrState("Sign Up")}
-                      className="cursor-pointer pl-1"
-                    >
-                      Create account
-                    </span>
-                  </div>
+                  Don't have an account?
+                  <span
+                    className="text-blue-600 cursor-pointer pl-1 hover:underline"
+                    onClick={() => setCurrState("Sign Up")}
+                  >
+                    Sign Up
+                  </span>
                 </>
               ) : (
-                <div className="underline medium-15 cursor-pointer">
+                <>
                   Already have an account?
                   <span
+                    className="text-blue-600 cursor-pointer pl-1 hover:underline"
                     onClick={() => setCurrState("Login")}
-                    className="cursor-pointer pl-1"
                   >
                     Login
                   </span>
-                </div>
+                </>
               )}
             </div>
           </form>
+        </div>
+
+        {/* Image Side */}
+        <div className="hidden md:block w-full md:w-1/2">
+          <img
+            src={login}
+            alt="Login Visual"
+            className="object-cover h-full w-full"
+          />
         </div>
       </div>
     </div>

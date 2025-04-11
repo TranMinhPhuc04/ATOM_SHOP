@@ -30,7 +30,7 @@ const About = () => {
             width={55}
             className="rounded-full"
           />
-          <h4 className="h4 mt-6">John Doe</h4>
+          <h4 className="h4 mt-6">CEO MINH PHUC</h4>
           <p className="relative bottom-2">CEO At TechStack</p>
           <FaQuoteLeft className="text-3xl" />
           <p className="max-w-[222px] mt-5 text-center">

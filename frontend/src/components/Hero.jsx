@@ -10,8 +10,10 @@ const Hero = () => {
         <div className="place-content-end max-xs:min-w-80">
           <div className="p-4">
             <p className="text-white max-w-xs">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab,
-              eveniet quaerat!
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui rerum
+              itaque nostrum molestias deserunt quas tempore delectus,
+              temporibus exercitationem sapiente voluptas eum omnis laboriosam
+              iure voluptatibus quae expedita rem vero.
             </p>
             <button className="btn-white mt-6">Explore more</button>
           </div>
